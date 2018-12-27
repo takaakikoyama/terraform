@@ -12,6 +12,18 @@
 - `variables.tf` : 設定一覧
 - `terraform.tfvars.default` : 設定のサンプル
 
+## AWS構成
+出来上がる構成は↓
+![AWS構成](./docs/AWS_servers_draw.io.svg)
+- VPC ネットワークにパブリックとプライベートのサブネットを作成
+- SSH の踏み台サーバ (bastion) をパブリックネットワーク内に配置  
+  Elastic IP にて固定 IP を付与し、外部からのアクセスが可能な状態に  
+  プライベートネットワークからはbastionを経由して外部と通信する
+- Web のフロントに ALB を配置
+- Web サーバは ALB 配下のプライベートネットワーク内に1台設置
+- Web アプリケーションのセッション管理等を ElasticCache の redis にて行う想定
+- API サーバはプライベートネットワーク内にに1台設置
+- RDS の mysql を1台設置
 
 
 ## 初期設定  
