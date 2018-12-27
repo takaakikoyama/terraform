@@ -1,0 +1,10 @@
+#  terraform backend
+# ------------------------------------------------------------
+terraform {
+  backend "s3" {
+    bucket  = "PROFILE_NAME-terraform"
+    key     = "terraform.tfstate"
+    profile = "PROFILE_NAME"
+    region  = "ap-northeast-1"
+  }
+}

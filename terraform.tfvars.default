@@ -1,0 +1,7 @@
+profile_name="PROFILE_NAME"
+
+ssh_key_file="/path/to/ssh_key_file.pem"
+
+mysql_db="DB_NAME"
+mysql_user="USER_NAME"
+mysql_password="p@ssw0rd"
